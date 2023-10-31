@@ -1,17 +1,16 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { NavBar } from './components/NavBar.jsx/navBar';
-import { ItemListContainer } from './components/ItemListContainer/itemListContainer';
+import { ItemListContainer } from './components/ItemListContainer/ItemListContainer';
 
 
 function App() {
 
   return (
     <>
-    <div>
-      <NavBar />
-      <ItemListContainer greeting='Bienvenidos a Taurus Store' />
-    </div>
-
+      <div>
+        <NavBar />
+        <ItemListContainer/>
+      </div>
     </>
   )
 }

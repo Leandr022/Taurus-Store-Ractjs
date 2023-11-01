@@ -10,7 +10,7 @@ function App() {
     <>
       <div>
         <NavBar />
-        <ItemListContainer greeting = 'Bienvenidos a taurus store' />
+        <ItemListContainer />
       
       </div>
     </>

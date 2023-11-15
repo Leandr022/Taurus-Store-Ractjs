@@ -2,7 +2,8 @@ import { CarWidget } from "../CartWidget/CarWidget"
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
+import { Link, NavLink } from "react-router-dom";
+
 
 export const NavBar = () => {
     return (
@@ -13,21 +14,18 @@ export const NavBar = () => {
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto">
-                <Nav.Link href="#features">Equipos</Nav.Link>
-                <Nav.Link href="#pricing">Equipos Nuevos</Nav.Link>
-                <NavDropdown title="Seminuevos" id="collapsible-nav-dropdown">
-                <NavDropdown.Item href="#action/3.1">Bat +90%</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.2">
-                    Bateria +85%
-                </NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.3">Bateria -85%</NavDropdown.Item>
-                </NavDropdown>
+                <NavLink className={( { isActive } ) => isActive ? 'btn btn-dark' : 'btn' } to='/'> Inicio </NavLink>
+                <NavLink className={( { isActive } ) => isActive ? 'btn btn-dark' : 'btn' } to='/category/abrigos'>Abrigos</NavLink>
+                <NavLink className={( { isActive } ) => isActive ? 'btn btn-dark' : 'btn' } to='/category/camisetas'>Camisetas</NavLink>
+                <NavLink className={( { isActive } ) => isActive ? 'btn btn-dark' : 'btn' } to='/category/pantalones'>Pantalones</NavLink>
+                
             </Nav>
             <Nav>
-                <Nav.Link href="#deets">Accesorios</Nav.Link>
-                <Nav.Link eventKey={2} href="#memes">
+                <Nav.Link href="#deets"> More deets </Nav.Link>
+                <Link className="btn" to='/cart'>
                 <CarWidget />
-                </Nav.Link>
+                </Link>
+
             </Nav>
             </Navbar.Collapse>
         </Container>

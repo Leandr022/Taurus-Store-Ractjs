@@ -73,7 +73,7 @@ export const ItemList = ({ productos }) => {
             justifyContent: 'center'
     }}>
 
-        { productos.map(products => <Item key={products.id} products={...products} /> )}
+            { productos.map(products => <Item key={products.id} products={...products} /> )}
         </div>
     )
 }

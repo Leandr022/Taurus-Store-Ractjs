@@ -4,6 +4,7 @@ import ItemCounter from './components/ItemCounter/ItemCounter';
 import { NavBar } from './components/NavBar/NavBar';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 import CartContainer from './components/CartContainer/CartContainer';
+import { CartContext } from './contexts/CartContex';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -18,7 +19,7 @@ function App() {
   return (
     <>
     <Router>
-
+      <CartContextProvider>
       <div className='container'>
         <NavBar />
         <Routes>
@@ -26,13 +27,13 @@ function App() {
             <Route path='/category/:cid' element={ <Home greeting= 'Bienvenidos a Taurus Store'/> }/>              
             <Route path='/detail/:pid' element={<ItemDetailContainer/> } />        
             <Route path='/cart' element={<CartContainer /> } />
-
             <Route path='*' element={ <Navigate to = '/'/> } />
         </Routes>
 
 
         <ItemCounter intial={1} stock={6} onAdd={onAdd} />
       </div>
+      </CartContextProvider>
     </Router>
     </>
   )

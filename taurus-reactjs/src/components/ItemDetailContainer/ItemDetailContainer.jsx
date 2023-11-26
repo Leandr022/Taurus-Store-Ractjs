@@ -16,7 +16,7 @@ export const ItemDetailContainer = () => {
     }, [pid])
 
     return (
-        <ItemDetail {...products} />
+        <ItemDetail products={products} />
     )
 }
 

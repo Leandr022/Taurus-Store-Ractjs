@@ -24,7 +24,3 @@ export const mFetch = (id) => new Promise((res) =>{
         }, 1000);
 
     })
-
-
-
-b

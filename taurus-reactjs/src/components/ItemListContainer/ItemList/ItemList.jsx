@@ -60,10 +60,6 @@ const productsFilter = (productos, filterState, handleFilterChange) => {
 
 export const ItemList = ({ productos }) => {
     return (
-    //<Filter productos = {productos}>
-      //      {productsFilter}
-    //</Filter> 
-
 
         <div style={{
             display: 'flex',
@@ -73,7 +69,7 @@ export const ItemList = ({ productos }) => {
             justifyContent: 'center'
     }}>
 
-            { productos.map(products => <Item key={products.id} products={...products} /> )}
+            { productos.map(products => <Item key={products.id} products={products} /> )}
         </div>
     )
 }

@@ -4,8 +4,8 @@ import ItemCounter from './components/ItemCounter/ItemCounter';
 import { NavBar } from './components/NavBar/NavBar';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 import CartContainer from './components/CartContainer/CartContainer';
-import { CartContext } from './contexts/CartContex';
-
+import { CartContext } from './contexts/CartContext';
+import { CartContextProvider } from './contexts/CartContext';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 

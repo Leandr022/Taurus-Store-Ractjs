@@ -1,6 +1,6 @@
 import {ItemCounter} from "../../ItemCounter/ItemCounter"
 import {useContext} from "react"
-import { CartContext } from "../../../contexts/CartContex"
+import { CartContext } from "../../../contexts/CartContext"
 
 export const ItemDetail = ({ products } ) => {
 

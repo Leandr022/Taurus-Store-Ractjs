@@ -14,8 +14,6 @@ const Formulario = () => {
 
 
     const handleOnChange = (evt) => {
-        //console.log (evt.target.name)
-        //console.log (evt.target.value)
         
         setFormData({
             ...formData,

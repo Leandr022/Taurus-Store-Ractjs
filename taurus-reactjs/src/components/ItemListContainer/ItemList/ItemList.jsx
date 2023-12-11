@@ -32,7 +32,7 @@ const productFiltered = (productos, filterState, handleFilterChange) => {
                 <p>Stock: {products.stock}</p>
                 <p>Descripción: {products.description}</p>
                 </div>
-                    <div className='card/footer'>
+                    <div className='card-footer'>
                         <button className='btn btn-outline-dark w-100'>Detalle</button>
                     </div>
                 </div>
@@ -60,8 +60,6 @@ const productFiltered = (productos, filterState, handleFilterChange) => {
 
 export const ItemList = ({ productos }) => {
     return (
-
-
         <div style={{
             display: 'flex',
             flexDirection: 'row' ,

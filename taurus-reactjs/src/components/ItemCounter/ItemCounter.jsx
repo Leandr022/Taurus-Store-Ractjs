@@ -10,7 +10,8 @@ export const ItemCounter = (initial=1, stock=6, onAdd) => {
 
 
     return (
-        <div className="w-25">            
+        <div className="w-25"> 
+            
             <button className='btn btn-outline-dark' onClick={handleSumar}>+</button>
             <button className='btn btn-outline-dark' onClick={handleRestar}>-</button>
             <button className='btn btn-outline-dark' onClick={handleOnAdd}>Agregar al Carrito</button>

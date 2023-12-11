@@ -2,13 +2,9 @@ import { useEffect , useState} from "react"
 import { mFetch } from "../../helpers/mFetch"
 import { useParams } from "react-router-dom"
 import { ItemList } from "./ItemList/ItemList"
+import { Loading } from "../Loading/Loading"
 
 
-const Loading = () => {
-    return(
-        <h2> Cargando...</h2>
-    )
-}
 
 export const ItemListContainer = ({ greeting }) => {
     const [productos, setProductos] = useState([])

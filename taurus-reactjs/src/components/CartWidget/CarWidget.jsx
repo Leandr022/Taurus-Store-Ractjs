@@ -1,7 +1,12 @@
+import { useCartContext } from "../../contexts/CartContext"
+import { AiOutlineShoppingCart } from "react-icons/ai";
+
 export const CarWidget = () => {
+    const {totalCantidad} = useCartContext()
     return (
         <div>
-            <i className="bi bi-cart4"></i>
+            {totalCantidad() !== 0 && totalCantidad()}
+            1 <AiOutlineShoppingCart />
         </div>
     )
 }

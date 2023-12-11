@@ -19,11 +19,11 @@ export const formWhitValidation = (FormWrappedComponent) => {
             return isValid
         }
         return(
-            <FormWrappedComponent>
-                {props}
+            <FormWrappedComponent
+                {...props}
                 errors = {errors}
                 validateForm = {validateForm}
-            </FormWrappedComponent>
+            />
         )
     }
     

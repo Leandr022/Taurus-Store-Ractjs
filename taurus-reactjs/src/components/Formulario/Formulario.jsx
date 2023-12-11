@@ -19,7 +19,7 @@ const Formulario = () => {
         
         setFormData({
             ...formData,
-            [evt.tartet.name] : evt.target.value 
+            [evt.target.name] : evt.target.value 
         })
     }
     return (

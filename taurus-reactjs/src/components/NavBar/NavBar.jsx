@@ -21,9 +21,8 @@ export const NavBar = () => {
                 
             </Nav>
             <Nav>
-                <Nav.Link href="#deets"> More deets </Nav.Link>
                 <Link className="btn" to='/cart'>
-                <CarWidget />
+                <CarWidget/>
                 </Link>
 
             </Nav>

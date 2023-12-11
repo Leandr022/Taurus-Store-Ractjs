@@ -11,10 +11,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
 
-  const onAdd = (cantidad) =>{
+  {/*const onAdd = (cantidad) =>{
     console.log ('La cantidad seleccionada es: ', cantidad) 
 
-  }
+  }*/} 
   
   return (
     <>
@@ -31,7 +31,7 @@ function App() {
         </Routes>
 
 
-        <ItemCounter intial={1} stock={6} onAdd={onAdd} />
+        {/*<ItemCounter intial={1} stock={6} onAdd={onAdd} /> */}       
       </div>
       </CartContextProvider>
     </Router>

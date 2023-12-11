@@ -2,12 +2,12 @@ import {useEffect, useState} from 'react'
 import { useParams } from 'react-router-dom'
 import {mFetch} from "../../helpers/mFetch"
 import ItemDetail from './ItemDetail/ItemDetail.jsx'
+import ItemCounter from '../ItemCounter/ItemCounter.jsx'
 
 export const ItemDetailContainer = () => {
     const[products, setproduct] = useState({})
     const { pid } = useParams()
 
-    
 
     useEffect(() =>{
         mFetch(pid)

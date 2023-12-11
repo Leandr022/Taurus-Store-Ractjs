@@ -1,7 +1,7 @@
 import {Filter} from "./FIlter"
 import {Item} from "../Item/Item"
 
-const productsFilter = (productos, filterState, handleFilterChange) => {
+const productFiltered = (productos, filterState, handleFilterChange) => {
     <>
         <div>
             <label> Buscar </label>
@@ -33,13 +33,13 @@ const productsFilter = (productos, filterState, handleFilterChange) => {
                 <p>Descripción: {products.description}</p>
                 </div>
                     <div className='card/footer'>
-                        <button className='btn-outline-dark w-100'>Detalle</button>
+                        <button className='btn btn-outline-dark w-100'>Detalle</button>
                     </div>
                 </div>
         )
         :  
         productos
-        .filter(prod => prod.name.toLoweCase().include(filterState))
+        .filter(prod => prod.name.toLowerCase().include(filterState))
         .map(products => <div key={products.id} className='card w-25'>
                 <div className= 'card-body p-0 text center'> 
                 <img src={products.img} className='w-100' alt='imagen' />
@@ -60,6 +60,7 @@ const productsFilter = (productos, filterState, handleFilterChange) => {
 
 export const ItemList = ({ productos }) => {
     return (
+
 
         <div style={{
             display: 'flex',

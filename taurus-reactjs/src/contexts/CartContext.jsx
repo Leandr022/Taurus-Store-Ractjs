@@ -17,7 +17,7 @@ export const CartContextProvider = ({ children }) => {
         } 
         setCartList([
             ...cartList,
-            product
+            products
         ])
     }
 

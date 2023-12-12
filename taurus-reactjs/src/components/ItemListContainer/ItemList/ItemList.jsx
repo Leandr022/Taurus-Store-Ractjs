@@ -1,5 +1,6 @@
 import {Filter} from "./FIlter"
 import {Item} from "../Item/Item"
+import { memo } from "react"
 
 const productFiltered = (productos, filterState, handleFilterChange) => {
     <>
@@ -22,16 +23,16 @@ const productFiltered = (productos, filterState, handleFilterChange) => {
             justifyContent: 'center'
     }}>
 
-    {   filterState === ''
-            ?
-            productos.map(products => <div key={products.id} className='card w-25'>
-                <div className= 'card-body p-0 text center'> 
-                <img src={products.img} className='w-100' alt='imagen' />
-                <h6>{products.name}</h6>
-                <p>Precio: {products.price} </p>
-                <p>Stock: {products.stock}</p>
-                <p>Descripción: {products.description}</p>
-                </div>
+        {   filterState === ''
+                ?
+                productos.map(products => <div key={products.id} className='card w-25'>
+                    <div className= 'card-body p-0 text center'> 
+                        <img src={products.img} className='w-100' alt='imagen' />
+                        <h6>{products.name}</h6>
+                        <p>Precio: {products.price} </p>
+                        <p>Stock: {products.stock}</p>
+                        <p>Descripción: {products.description}</p>
+                    </div>
                     <div className='card-footer'>
                         <button className='btn btn-outline-dark w-100'>Detalle</button>
                     </div>

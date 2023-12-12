@@ -3,28 +3,35 @@ import { mFetch } from "../../helpers/mFetch"
 import { useParams } from "react-router-dom"
 import { ItemList } from "./ItemList/ItemList"
 import { Loading } from "../Loading/Loading"
-
+import {doc, getFirestore, query,limit, collection, getDocs} from 'firebase/firestore'
 
 
 export const ItemListContainer = ({ greeting }) => {
     const [productos, setProductos] = useState([])
+    const [producto, setProducto] = useState([])
     const [loading, setLoading] = useState(true)
     const {cid} = useParams()
 
     useEffect(() =>{
+        const dbFirestore = getFirestore()
+        const queryCollection = collection(dbFirestore, 'products')
         if (cid) {
-            mFetch()
-            .then( result => setProductos(result.filter(products => products.category === cid)))
+            const queryFilter = query(
+                queryCollection,
+                where('category', '==', cid)
+            )
+
+            getDocs(queryFilter)
+            .then(resp => setProductos(resp.docs.map(producto => ({ id: producto.id, ...producto.data() } ) )))
             .catch(err => console.log(err))
             .finally(() => setLoading(false))
         } else {
-            mFetch()
-            .then( result => setProductos(result))
+            getDocs(queryCollection)
+            .then(resp => setProductos(resp.docs.map(productos =>({ id:productos.id, ...productos.data() } ) )))
             .catch(err => console.log(err))
             .finally(() => setLoading(false))
         }       
     }, [cid])
-
 
     return (
         <>

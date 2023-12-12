@@ -1,7 +1,7 @@
 import {useCounter} from "../../hooks/useCounter.js"
 
 
-export const ItemCounter = (initial=1, stock=6, onAdd) => {
+export const ItemCounter = ({initial=1, stock=6, onAdd}) => {
     const {counter , handleRestar , handleSumar} = useCounter(initial, stock)
 
     const handleOnAdd = () =>{
@@ -12,8 +12,9 @@ export const ItemCounter = (initial=1, stock=6, onAdd) => {
     return (
         <div className="w-25"> 
             
-            <button className='btn btn-outline-dark' onClick={handleSumar}>+</button>
             <button className='btn btn-outline-dark' onClick={handleRestar}>-</button>
+            <label>{counter}</label>
+            <button className='btn btn-outline-dark' onClick={handleSumar}>+</button>
             <button className='btn btn-outline-dark' onClick={handleOnAdd}>Agregar al Carrito</button>
         </div>
     )

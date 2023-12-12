@@ -6,7 +6,7 @@ export const CarWidget = () => {
     return (
         <div>
             {totalCantidad() !== 0 && totalCantidad()}
-            1 <AiOutlineShoppingCart />
+            <AiOutlineShoppingCart />
         </div>
     )
 }

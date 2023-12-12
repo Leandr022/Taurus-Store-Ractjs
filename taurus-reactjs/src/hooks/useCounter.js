@@ -1,7 +1,7 @@
 import {useState} from "react"
 
 export const useCounter = (min, max) => {
-    const[counter, setCounter] = useState (min)
+    const [counter, setCounter] = useState (min)
 
 
 

@@ -17,7 +17,7 @@ export const CartContainer = () => {
     const handleOrder = async(evt) => {
         evt.preventDefault()
         const order ={}
-        order.buyer = { name: 'leandro', phone: '112345678', email: 'lean@gmail.com'}
+        order.buyer = {name: 'leandro', phone: '112345678', email: 'lean@gmail.com'}
         order.items = cartList.map(({id, name, price}) => ({id, name,price}))
         order.total = totalPrice()
 
@@ -35,6 +35,8 @@ export const CartContainer = () => {
             })
             vaciarCarrito()
         })
+
+
     }
 
     const handleOnChange= (evt) =>{
@@ -48,14 +50,14 @@ export const CartContainer = () => {
         <div>
             {isId !== '' && <label>La orden de compra es: {isId}</label>}
             {cartList.map(products => <div key={products.id}>
-                                        <img className="w25" src={products.img} />
-                                        Cantidad: {products.cantidad} - Precio: {products.price}
+                                        <img className="w-25" src={products.img} />
+                                        Cantidad: {products.cantidad} - Precio: {products.price} - subtotal: {products.cantidad * products.price}
                                         <button className="btn btn-danger" onClick={() =>removeProduct(products.id)}> X </button>
                                         </div>
             )}
             
                 {
-                    totalPrice() !== 0 ?
+                    totalPrice() === 0 ?
                         <div>
                             No hay producto
                             <br/>
@@ -64,7 +66,9 @@ export const CartContainer = () => {
                     :
                         <>
                             <br/>
+                            <center>
                             <label>Precio total: {totalPrice()} </label>
+                            </center>
                             <br/>
                             <button className="btn btn-danger" onClick={vaciarCarrito}> Vaciar Carrito</button>
                             <form className="form-control p-5 mt-3" onSubmit={handleOrder}>

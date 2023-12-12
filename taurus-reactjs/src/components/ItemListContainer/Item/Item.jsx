@@ -13,8 +13,7 @@ export const Item = memo(({ products }) => {
             </div>
             <div className='card/footer'>
             <Link to={`/detail/${products.id}`} className='btn btn-outline-dark w-100'> Detalle </Link>
-            </div>
-        
+            </div>        
         </div>
     )
 }

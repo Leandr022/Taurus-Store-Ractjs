@@ -1,4 +1,4 @@
-import { ItemListContainer} from './components/ItemListContainer/itemListContainer';
+import { ItemListContainer as Home} from './components/ItemListContainer/itemListContainer';
 import { BrowserRouter as Router , Routes, Route , Navigate} from 'react-router-dom'
 import { NavBar } from './components/NavBar/NavBar';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
@@ -16,8 +16,8 @@ function App() {
       <div className='container'>
         <NavBar />
         <Routes>
-            <Route path='/' element={ <ItemListContainer greeting='Bienvenidos a Taurus Store' /> }/>
-            <Route path='/category/:cid' element={ <ItemListContainer greeting= 'Bienvenidos a Taurus Store'/> }/>              
+            <Route path='/' element={ <Home greeting='Bienvenidos a Taurus Store' /> }/>
+            <Route path='/category/:cid' element={ <Home greeting= 'Bienvenidos a Taurus Store'/> }/>              
             <Route path='/detail/:pid' element={<ItemDetailContainer/> } />        
             <Route path='/cart' element={<CartContainer /> } />
             <Route path='*' element={ <Navigate to = '/'/> } />

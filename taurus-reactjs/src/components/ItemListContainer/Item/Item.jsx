@@ -9,7 +9,7 @@ export const Item = memo(({ products }) => {
                 <h6>{products.name}</h6>
                 <p>Precio: {products.price} </p>
                 <p>Stock: {products.stock}</p>
-                {/*<p>Descripción: {products.description}</p> */}
+                <p>Descripción: {products.description}</p>
             </div>
             <div className='card/footer'>
             <Link to={`/detail/${products.id}`} className='btn btn-outline-dark w-100'> Detalle </Link>
